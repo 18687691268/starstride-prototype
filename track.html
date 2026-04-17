@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Order - StarStride Sportswear Information System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body onload="initData()">
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="StarStride Logo" class="logo" />
+        <div>
+          <h1>StarStride Sportswear Information System</h1>
+          <p>Order Tracking Module</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="staff.html">Staff</a>
+        <a href="customer.html">Customer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <section class="card">
+      <h2>UC11 - Track Order Status</h2>
+      <p class="section-desc">
+        Customers can enter their Customer ID and Order ID to retrieve the current order and shipping status.
+      </p>
+
+      <label for="trackCustomerId">Customer ID</label>
+      <input type="text" id="trackCustomerId" placeholder="e.g. C001" />
+
+      <label for="trackOrderId">Order ID</label>
+      <input type="text" id="trackOrderId" placeholder="e.g. O001" />
+
+      <div class="button-group">
+        <button class="btn" onclick="trackOrder()">Track Order</button>
+        <button class="btn secondary" onclick="resetTrackForm()">Clear</button>
+      </div>
+
+      <div id="trackMessage" class="message">Enter an Order ID to view the order status.</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

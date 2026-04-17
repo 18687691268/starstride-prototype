@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Module - StarStride Sportswear Information System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body onload="initData(); loadProducts();">
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="StarStride Logo" class="logo" />
+        <div>
+          <h1>StarStride Sportswear Information System</h1>
+          <p>Staff Inventory Management Module</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="customer.html">Customer</a>
+        <a href="track.html">Track Order</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>UC06 - Update Stock Level</h2>
+      <p class="section-desc">
+        Staff can update product stock based on supplier delivery details or physical stock count.
+      </p>
+
+      <div class="form-grid">
+        <div>
+          <label for="productId">Product ID</label>
+          <input type="text" id="productId" placeholder="e.g. P001" />
+        </div>
+
+        <div>
+          <label for="productName">Product Name</label>
+          <input type="text" id="productName" placeholder="e.g. Running Shoes" />
+        </div>
+
+        <div>
+          <label for="adjustQty">Adjust Quantity</label>
+          <input type="number" id="adjustQty" placeholder="e.g. 10" />
+        </div>
+
+        <div>
+          <label for="supplierId">Supplier ID</label>
+          <input type="text" id="supplierId" placeholder="e.g. S001" />
+        </div>
+
+        <div>
+          <label for="deliveredQty">Delivered Quantity</label>
+          <input type="number" id="deliveredQty" placeholder="e.g. 10" />
+        </div>
+
+        <div>
+          <label for="deliveryDate">Delivery Date</label>
+          <input type="date" id="deliveryDate" />
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="btn" onclick="updateStock()">Verify &amp; Update</button>
+        <button class="btn secondary" onclick="resetStaffForm()">Clear Form</button>
+      </div>
+
+      <div id="staffMessage" class="message">Please enter product and supplier details.</div>
+    </section>
+
+    <section class="card">
+      <h2>Product Store (D2)</h2>
+      <p class="section-desc">
+        This table simulates the current product records stored in the inventory database.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Price (THB)</th>
+              <th>Available Quantity</th>
+              <th>Low Stock Threshold</th>
+            </tr>
+          </thead>
+          <tbody id="productTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
